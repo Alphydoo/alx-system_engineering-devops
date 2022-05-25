@@ -1,4 +1,3 @@
-[master 8e5c06a] Task 2
- 2 files changed, 5 insertions(+)
- create mode 100755 0x00-shell_basics/2-bring_me_home
- create mode 100644 README.md
+[master 51bda51] Task 4
+ 3 files changed, 9 insertions(+), 4 deletions(-)
+ create mode 100755 0x00-shell_basics/4-listmorefiles

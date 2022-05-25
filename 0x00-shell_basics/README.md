@@ -1,3 +1,2 @@
-[master ac65092] Task 5
- 1 file changed, 3 insertions(+)
- create mode 100755 0x00-shell_basics/5-listfilesdigitonly
+[master 4e62f8d] Task 5
+ 2 files changed, 4 insertions(+), 5 deletions(-)
