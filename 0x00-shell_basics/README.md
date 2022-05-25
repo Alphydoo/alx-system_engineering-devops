@@ -1,2 +1,2 @@
-[master 4e62f8d] Task 5
- 2 files changed, 4 insertions(+), 5 deletions(-)
+[master 9c249e7] Task 5
+ 1 file changed, 1 insertion(+), 1 deletion(-)
