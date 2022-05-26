@@ -1,2 +1,3 @@
-[master 42fc5fb] Look in the mirror
- 2 files changed, 3 insertions(+), 3 deletions(-)
+[master 702a87f] Directories
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+ create mode 100755 0x01-shell_permissions/11-directories_permissions
