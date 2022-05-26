@@ -1,3 +1,2 @@
-[master bf6e203] Task 10
- 2 files changed, 4 insertions(+), 2 deletions(-)
- create mode 100755 0x00-shell_basics/10-back
+[master 6b0a068] Task 10
+ 2 files changed, 5 insertions(+), 4 deletions(-)
