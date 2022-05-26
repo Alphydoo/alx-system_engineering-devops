@@ -1,3 +1,2 @@
-[master 7632dcf] Task 12
- 2 files changed, 4 insertions(+), 2 deletions(-)
- create mode 100755 0x00-shell_basics/12-file_type
+[master f65097a] Task 12
+ 1 file changed, 1 insertion(+), 1 deletion(-)
