@@ -1,2 +1,3 @@
-[master 2343d60] Task 12
- 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 4f1c45c] Task 14
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+ create mode 100755 0x00-shell_basics/14-copy_html
