@@ -1,2 +1,2 @@
-[master 6958a36] Task 9
- 2 files changed, 3 insertions(+), 3 deletions(-)
+[master fd4e900] Task 10
+ 2 files changed, 2 insertions(+), 2 deletions(-)
