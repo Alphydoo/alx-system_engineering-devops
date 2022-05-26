@@ -1,3 +1,3 @@
-[master ecc3107] Everybody
- 3 files changed, 4 insertions(+), 3 deletions(-)
- mode change 100644 => 100755 0x01-shell_permissions/7-everybody
+[master 625e220] Jame Bond
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+ create mode 100755 0x01-shell_permissions/8-James_Bond
