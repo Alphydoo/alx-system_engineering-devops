@@ -1,3 +1,3 @@
-[master 6aaf6e7] Execute
- 3 files changed, 6 insertions(+), 3 deletions(-)
- create mode 100644 5-execute
+[master 93c14c1] Who am I
+ 5 files changed, 8 insertions(+), 6 deletions(-)
+ create mode 100644 0x01-shell_permissions/7-everybody

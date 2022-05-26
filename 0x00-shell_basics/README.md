@@ -1,3 +1,3 @@
-[master 06c647d] Task 19
- 2 files changed, 4 insertions(+), 2 deletions(-)
- create mode 100755 0x00-shell_basics/school.mgc
+[master 41eddab] Task 19
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+ rewrite 0x00-shell_basics/school.mgc (100%)
