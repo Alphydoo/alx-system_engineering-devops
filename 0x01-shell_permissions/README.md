@@ -1,3 +1,3 @@
-[master 97176eb] Groups
- 1 file changed, 2 insertions(+)
- create mode 100755 0x01-shell_permissions/2-groups
+[master ec84d6c] New owner
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+ create mode 100755 0x01-shell_permissions/3-new_owner
