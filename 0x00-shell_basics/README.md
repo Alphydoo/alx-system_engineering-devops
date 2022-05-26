@@ -1,2 +1,2 @@
-[master f2928ac] Task 7
- 2 files changed, 2 insertions(+), 3 deletions(-)
+[master 961e79f] Task 7
+ 1 file changed, 1 insertion(+)
