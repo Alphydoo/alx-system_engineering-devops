@@ -1,2 +1,3 @@
-[master 8d4cc80] Who am I
- 2 files changed, 3 insertions(+), 4 deletions(-)
+[master ecc3107] Everybody
+ 3 files changed, 4 insertions(+), 3 deletions(-)
+ mode change 100644 => 100755 0x01-shell_permissions/7-everybody
