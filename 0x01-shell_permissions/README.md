@@ -1,3 +1,3 @@
-[master 702a87f] Directories
- 2 files changed, 4 insertions(+), 2 deletions(-)
- create mode 100755 0x01-shell_permissions/11-directories_permissions
+[master 59275f7] More directories
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+ create mode 100755 0x01-shell_permissions/12-directory_permissions
