@@ -1,3 +1,3 @@
-[master 3ca8064] My name is Betty
- 1 file changed, 1 insertion(+)
- create mode 100644 0x01-shell_permissions/README.md
+[master 592d21e] Who am I
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+ create mode 100755 0x01-shell_permissions/1-who_am_i
