@@ -1,25 +1,29 @@
 #!/usr/bin/python3
-"""
-Gets the completed todo list for the user at id and prints to a CSV file.
-Usage: ./1-export_to_CSV.py 2
-where 2 is a user id
-Fake data from "https://jsonplaceholder.typicode.com"
-"""
+"""Script that uses REST API"""
 import json
 import requests
 import sys
 
 
+def make_json(users=None, todos=None, u=None):
+    """Turns payloads into CSV format"""
+    all_list = []
+    with open(sys.argv[1] + ".json", "w") as f:
+        for i in todos:
+            all_list.append({"task": i.get("title"),
+                             "completed": i.get("completed"),
+                             "username": users[0].get("username")})
+        alljson = {str(u): all_list}
+        json.dump(alljson, f)
+
+
 if __name__ == "__main__":
-    root = "https://jsonplaceholder.typicode.com"
-    users = requests.get(root + "/users", params={"id": sys.argv[1]})
-    for names in users.json():
-        usr_id = names.get('id')
-        todo = requests.get(root + "/todos", params={"userId": usr_id})
-        csv_arr = []
-        for tasks in todo.json():
-            csv_arr.append({"task": tasks.get("title"),
-                            "completed": str(tasks.get("completed")),
-                            "username": names.get("name")})
-        with open(sys.argv[1] + ".json", 'a') as f:
-            f.write(json.dumps({"2": csv_arr}))
+    if len(sys.argv) == 2 and sys.argv[1].isdigit():
+        args_id = {"id": sys.argv[1]}
+        users = requests.get("https://jsonplaceholder.typicode.com/users",
+                             params=args_id).json()
+        args_userid = {"userId": sys.argv[1]}
+        todos = requests.get("https://jsonplaceholder.typicode.com/todos",
+                             params=args_userid).json()
+
+        make_json(users, todos, sys.argv[1])
