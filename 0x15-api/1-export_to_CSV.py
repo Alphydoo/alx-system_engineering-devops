@@ -1,25 +1,36 @@
 #!/usr/bin/python3
-"""
-Gets the completed todo list for the user at id and prints to a CSV file.
-Usage: ./1-export_to_CSV.py 2
-where 2 is a user id
-Fake data from "https://jsonplaceholder.typicode.com"
-"""
+"""Script that uses REST API"""
 import csv
 import requests
 import sys
 
 
+def make_csv(users=None, todos=None):
+    """Turns payloads into CSV format"""
+    titles = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+
+    with open(sys.argv[1] + ".csv", "w") as f:
+        write = csv.DictWriter(f, fieldnames=titles, quoting=csv.QUOTE_ALL)
+        for i in todos:
+            write.writerow({"USER_ID": i.get("userId"),
+                            "USERNAME": users[0].get("username"),
+                            "TASK_COMPLETED_STATUS": i.get("completed"),
+                            "TASK_TITLE": i.get("title")})
+
+
 if __name__ == "__main__":
-    root = "https://jsonplaceholder.typicode.com"
-    users = requests.get(root + "/users", params={"id": sys.argv[1]})
-    for names in users.json():
-        usr_id = names.get('id')
-        todo = requests.get(root + "/todos", params={"userId": usr_id})
-        csv_arr = []
-        with open(sys.argv[1] + ".csv", 'a') as f:
-            writer = csv.writer(f, quoting=csv.QUOTE_ALL)
-            for tasks in todo.json():
-                writer.writerow([names.get('id'), names.get('name'),
-                                 str(tasks.get('completed')),
-                                 tasks.get('title')])
+    if len(sys.argv) == 2 and sys.argv[1].isdigit():
+        args_id = {"id": sys.argv[1]}
+        users = requests.get("https://jsonplaceholder.typicode.com/users",
+                             params=args_id).json()
+        args_userid = {"userId": sys.argv[1]}
+        todos = requests.get("https://jsonplaceholder.typicode.com/todos",
+                             params=args_userid).json()
+        todos_len = 0
+        todos_arr = []
+        for i in todos:
+            if i.get("completed"):
+                todos_arr.append(i)
+                todos_len += 1
+
+        make_csv(users, todos)
