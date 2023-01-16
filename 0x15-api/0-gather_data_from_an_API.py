@@ -1,26 +1,25 @@
 #!/usr/bin/python3
-"""
-Gets the completed todo list for the user at id.
-Usage: ./0-gather_data_from_an_API.py 2
-where 2 is the user id of Ervin Howell.
-Fake data from "https://jsonplaceholder.typicode.com"
-"""
+"""Script that uses REST API"""
 import requests
 import sys
 
-
 if __name__ == "__main__":
-    root = "https://jsonplaceholder.typicode.com"
-    users = requests.get(root + "/users", params={"id": sys.argv[1]})
-    for names in users.json():
-        usr_id = names.get('id')
-        todo = requests.get(root + "/todos", params={"userId": usr_id})
-        task_complete = 0
-        tasks_array = []
-        for tasks in todo.json():
-            if tasks.get('completed') is True:
-                task_complete += 1
-                tasks_array.append(tasks.get('title'))
-        print("Employee {:s} is done with tasks({:d}/{:d}):\n\t {}".
-              format(names.get('name'), task_complete,
-                     len(todo.json()), "\n\t ".join(tasks_array)))
+    if len(sys.argv) == 2 and sys.argv[1].isdigit():
+        args = {"id": sys.argv[1]}
+        users = requests.get("https://jsonplaceholder.typicode.com/users",
+                             params=args).json()
+        args = {"userId": sys.argv[1]}
+        todos = requests.get("https://jsonplaceholder.typicode.com/todos",
+                             params=args).json()
+        todos_len = 0
+        todos_arr = []
+        for i in todos:
+            if i.get("completed"):
+                todos_arr.append(i)
+                todos_len += 1
+
+        print("Employee {} is done with tasks({}/{}):".format(
+              users[0].get("name"), todos_len, len(todos)))
+
+        for i in todos_arr:
+            print("\t {}".format(i.get("title")))
